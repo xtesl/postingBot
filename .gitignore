@@ -1,4 +1,4 @@
 /devPython
-/account/__pycache__/
-/core/__pycache__/
-/account/migrations/__pycache__/
+/account/__pycache__
+/core/__pycache__
+/account/migrations/__pycache__

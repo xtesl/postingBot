@@ -41,8 +41,7 @@ class LoginView(APIView):
     def post(self, request, *args, **kwargs):
         email = request.data.get('email')
         password = request.data.get('password')
-        print(email)
-        print(password);
+        
 
         #Authenticate user using the custom authenticate function from .backend
         authenticated_user = authenticate(request, username=email, password=password)
@@ -55,7 +54,8 @@ class LoginView(APIView):
             refresh_token = RefreshToken.for_user(authenticated_user)
             return Response({
                 'refresh': str(refresh_token),
-                 'access': str(refresh_token.access_token)
+                 'access': str(refresh_token.access_token),
+                 'id':authenticated_user.id
                 })
         else:
             #Login gone wrong

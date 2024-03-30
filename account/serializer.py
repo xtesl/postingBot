@@ -15,7 +15,7 @@ class UserSerializer(serializers.ModelSerializer):
                 validated_data['username'],
                 validated_data['password']
             )
-            user.save(using=self._db)
+            user.save()
             return user
         
     def update(self, instance, validated_data):
